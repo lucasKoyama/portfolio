@@ -1,0 +1,116 @@
+iframe {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+}
+
+.card a {
+  text-decoration: none;
+  color: #2c6bea;
+  font-size: 1.5em;
+  text-shadow: 0px 0px 1px rgba(20, 20, 170, 0.222);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 3.5vw;
+}
+
+.cellphone, .notebook {
+  position: relative;
+} 
+
+.screen {
+  border: none;
+  position: absolute;
+}
+
+.notebook-frame {
+  width: 89.4vw;
+  height: 47.5vw;
+}
+
+.notebook .screen {
+  left: 14.5vw;
+  top: 2.5vw;
+  width: 60vw;
+}
+
+.cellphone-frame {
+  position: absolute;
+  width: 16.5vw;
+  top: -44vw;
+  left: -47vw;
+}
+
+.cellphone .screen {
+  width: 47.5vw;
+  top: -41.5vw;
+  left: -62.3vw;
+  z-index: -1;
+}
+
+.gambi {
+  position: absolute;
+  width: 3.12vw;
+  height: 34vw;
+  top: -44vw;
+  left: -50vw;
+  z-index: 1;
+  background-color: #ebebeb;
+}
+
+@media screen and (min-width: 1440px) {
+  .cellphone video {
+    display: none;
+  }
+  
+  iframe {
+    display: block;
+  }
+
+  .card {
+    margin-top: 100px;
+  }
+
+  .card h2 {
+    font-size: 1.5em;
+  }
+  
+  .cellphone {
+    width: 360px;
+    margin-top: -732px;
+    margin-right: 72%;
+  }
+  
+  .cellphone-frame {
+    position: relative;
+    top: 0;
+    left: -40px;
+    width: 360px;
+  }
+  
+  .notebook-frame {
+    width: 1570px;
+    height: 832px;
+  }
+  
+  .notebook .screen {
+    top: 44px;
+    left: 269px;
+    width: 1039px;
+  }
+  
+  .cellphone .screen {
+    top: 21px;
+    left: -16px;
+    border-radius: 30px;
+    width: 87%;
+    z-index: 1;
+  }
+}

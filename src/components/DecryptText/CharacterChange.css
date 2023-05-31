@@ -1,0 +1,11 @@
+.blur {
+  text-shadow: 10px 10px 500px rgba(0, 0, 0, 1);
+  filter: blur(0.5vw);
+  opacity: 0.9;
+}
+
+.no-blur {
+  text-shadow:  2px 2px 10px rgba(2, 65, 2, 0.186);
+  filter: blur(0);
+  transition: all 1s;
+}

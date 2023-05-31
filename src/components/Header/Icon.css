@@ -1,0 +1,11 @@
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+
+.menu a:hover {
+  text-shadow: 0px 0px 1.5px white;
+}

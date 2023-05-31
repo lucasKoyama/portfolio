@@ -1,0 +1,10 @@
+.about-me {
+  width: 100vw;
+  height: 40vh;
+}
+
+@media screen and (min-width: 1440px) {
+  .about-me {
+    height: 81vh;
+  }
+}

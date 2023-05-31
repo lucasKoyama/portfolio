@@ -1,0 +1,67 @@
+nav {
+  font-size: 1em;
+  font-weight: 400;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown a {
+  position: relative;
+  display: block;
+  font-size: 1em;
+  padding: 5px;
+}
+
+.skills {
+  display: none;
+  position: absolute;
+  width: 170px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.37);
+  padding: 10px;
+  transition: all 0.5s;
+  filter: blur(10px);
+}
+
+.skills h4 {
+  text-shadow: 0px 0px 0.8px white;
+}
+
+.dropdown:hover .skills {
+  display: inline-block;
+}
+
+.focus {
+  filter: blur(0);
+}
+
+.skills li {
+  padding: 5px;
+  display: block;
+  transition: all 0.5s;
+}
+
+.skills li:hover {
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.18);
+  text-shadow: 0px 0px 1.3px white;
+  cursor: pointer;
+}
+
+.skills-description {
+  text-align: justify;
+}
+
+.skills-description p {
+  margin-top: 10px;
+  text-shadow: 0px 0px 0.8px white;
+}
