@@ -15,6 +15,11 @@ header {
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.37);
 }
 
+.headroom-wrapper {
+  z-index: 999;
+  position: relative;
+}
+
 .nav-item {
   width: 100%;
   display: flex;
