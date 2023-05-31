@@ -90,27 +90,29 @@ iframe {
   
   .cellphone-frame {
     position: relative;
-    top: 0;
-    left: -40px;
+    top: -98px;
+    left: 15px;
     width: 360px;
   }
   
   .notebook-frame {
+    margin-left: 252px;
     width: 1570px;
     height: 832px;
+    z-index: -1;
+    position: relative;
   }
   
   .notebook .screen {
     top: 44px;
-    left: 269px;
+    left: 520px;
     width: 1039px;
+    z-index: -1;
   }
   
   .cellphone .screen {
-    top: 21px;
-    left: -16px;
-    border-radius: 30px;
+    top: -77px;
+    left: 39px;
     width: 87%;
-    z-index: 1;
   }
 }
