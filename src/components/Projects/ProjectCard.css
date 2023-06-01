@@ -65,6 +65,75 @@ iframe {
   background-color: #ebebeb;
 }
 
+dialog::backdrop {
+  background-color: rgba(0,0,0,.8);
+}
+
+dialog {
+  margin: auto;
+  padding: 25px;
+  border-radius: 15px;
+  background-color: #ebebeb;
+  box-shadow: 0px 0px 2px #ebebeb;
+  outline: none;
+  overflow: hidden;
+  border: none;
+}
+
+.dialog-container {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+dialog .fa-xmark {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: rgb(155, 0, 0);
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+dialog .fa-xmark:hover {
+  transform: scale(1.35);
+  color: red;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+dialog video {
+  display: none;
+}
+
+dialog aside {
+  margin-left: 20px;
+}
+
+dialog p {
+  text-align: justify;
+}
+
+dialog h4 {
+  margin-top: 10px;
+}
+
+dialog aside ul {
+  margin: 4px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 70px;
+}
+
+.icons {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+}
+
 @media screen and (min-width: 1440px) {
   .cellphone video {
     display: none;
@@ -117,5 +186,78 @@ iframe {
     width: 87%;
     z-index: 1;
     border-radius: 30px;
+  }
+
+  dialog {
+    width: 1015px;
+    height: 370px;
+  }
+
+  dialog video {
+    display: block;
+    width: 550px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+  }
+}
+
+.btn {
+  width: 280px;
+  height: 40px;
+  margin-left: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  position: relative;
+  background-color: transparent;
+  transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0.6;
+}
+
+.btn::after {
+  content: '';
+  border-bottom: 3px double black;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  margin-top: -5px;
+  top: 0;
+  left: 5px;
+  visibility: hidden;
+  opacity: 1;
+  transition: .2s linear;
+}
+
+.btn .icon {
+  transform: translateX(0%);
+  transition: .2s linear;
+  animation: attention 1.2s linear infinite;
+}
+
+.btn:hover::after {
+  visibility: visible;
+  opacity: 0.7;
+  width: 90%;
+}
+
+.btn:hover {
+  letter-spacing: 2px;
+  opacity: 1;
+}
+
+.btn:hover > .icon {
+  transform: translateX(30%);
+  animation: none;
+}
+
+@keyframes attention {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(30%);
   }
 }

@@ -4,6 +4,7 @@ import CharacterChange from './CharacterChange';
 import './TextReveal.css';
 
 const timerToGlitch = 2700;
+const tabletWidth = 768;
 
 function TextReveal({ strings, fontSize }) {
   const [glitch, setGlitch] = useState(false);
@@ -16,7 +17,7 @@ function TextReveal({ strings, fontSize }) {
   }, []);
   return (
     <div className="text-reveal" style={ { fontSize } }>
-      { glitch
+      { glitch || window.innerWidth < tabletWidth
         ? strings.map((string, index) => {
           return (
             <div className="content" key={ index }>
@@ -24,7 +25,7 @@ function TextReveal({ strings, fontSize }) {
             </div>
           );
         })
-        : strings.map((string, index) => {
+        : window.innerWidth > tabletWidth && strings.map((string, index) => {
           return (
             <p key={ index }>
               {

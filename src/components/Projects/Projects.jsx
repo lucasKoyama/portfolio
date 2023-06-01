@@ -18,13 +18,18 @@ function Projects({ search }) {
             .filter((skill) => skill.toLowerCase().includes(...searchArray));
         })
         .map((pjct, index) => {
-          const { link, videoDesktop, videoMobile, nome } = pjct;
+          const { nome, link, repo, post, dialogMsg,
+            videoDesktop, videoMobile, skillsUsed } = pjct;
           return (<ProjectCard
             key={ index }
+            nome={ nome }
             link={ link }
+            repo={ repo }
+            post={ post }
+            dialogMsg={ dialogMsg }
             videoDesktop={ videoDesktop }
             videoMobile={ videoMobile }
-            nome={ nome }
+            skills={ skillsUsed }
           />);
         })}
     </section>
