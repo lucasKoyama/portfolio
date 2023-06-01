@@ -73,3 +73,13 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .icon-button:hover .text {
+    display: none;
+  }
+
+  .icon-button:hover {
+    width: 80px;
+  }
+}

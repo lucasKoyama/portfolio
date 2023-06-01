@@ -4,10 +4,10 @@ import './CharacterChange.css';
 
 const CHAR_CODE_MIN = 65;
 const CHAR_CODE_MAX = 95;
-const INTERVAL_MIN = 100;
-const INTERVAL_MAX = 400;
+const INTERVAL_MIN = 400;
+const INTERVAL_MAX = 800;
 const TIMER = 2500;
-const MAX_CHANGES = 6;
+const MAX_CHANGES = 3;
 
 function CharacterChange({ character }) {
   const [randomCharacter, setRandomCharacter] = useState('');

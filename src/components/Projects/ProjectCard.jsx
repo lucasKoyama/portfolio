@@ -10,8 +10,10 @@ const timer = 1000;
 
 function ProjectCard(props) {
   const { nome, link, repo, post, dialogMsg, videoDesktop, videoMobile, skills } = props;
-  const videoRef = useRef(null);
-  const [playVideo, setPlayVideo] = useState(false);
+  const videoRefDesktop = useRef(null);
+  const videoRefMobile = useRef(null);
+  const [playVideoDesktop, setPlayVideoDesktop] = useState(false);
+  const [playVideoMobile, setPlayVideoMobile] = useState(false);
   const [dialogID, setDialogID] = useState('');
 
   const openDialog = () => {
@@ -22,25 +24,32 @@ function ProjectCard(props) {
   useEffect(() => {
     const dialogId = nome.split(' ');
     setDialogID(dialogId[dialogId.length - 1]);
-    const videoElement = videoRef.current;
+    const videoElementDesktop = videoRefDesktop.current;
+    const videoElementMobile = videoRefMobile.current;
 
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const timeoutId = setTimeout(() => {
-            setPlayVideo(true);
+            setPlayVideoDesktop(true);
+            setPlayVideoMobile(true);
             clearTimeout(timeoutId);
           }, timer);
-        } else if (videoElement.currentTime > 0) {
-          videoElement.pause();
-          videoElement.currentTime = 0;
-          setPlayVideo(false);
+        } else if (videoElementDesktop.currentTime > 0
+            && videoElementMobile.currentTime > 0) {
+          videoElementDesktop.pause();
+          videoElementMobile.pause();
+          videoElementDesktop.currentTime = 0;
+          videoElementMobile.currentTime = 0;
+          setPlayVideoDesktop(false);
+          setPlayVideoMobile(false);
         }
       });
     };
 
     const observer = new IntersectionObserver(handleIntersection);
-    observer.observe(videoElement);
+    observer.observe(videoElementDesktop);
+    observer.observe(videoElementMobile);
 
     return () => {
       observer.disconnect();
@@ -48,19 +57,22 @@ function ProjectCard(props) {
   }, [nome]);
 
   useEffect(() => {
-    const videoElement = videoRef.current;
-    if (playVideo) {
-      videoElement.play();
+    const videoElementDesktop = videoRefDesktop.current;
+    const videoElementMobile = videoRefMobile.current;
+    if (playVideoDesktop && videoElementMobile) {
+      videoElementDesktop.play();
+      videoElementMobile.play();
     } else {
-      videoElement.pause();
+      videoElementDesktop.pause();
+      videoElementMobile.pause();
     }
-  }, [playVideo]);
+  }, [playVideoDesktop, playVideoMobile]);
 
   return (
     <div className="card">
-      <h1 className="animate__animated animate__fadeInDown">
+      <h2 className="animate__animated animate__fadeInDown">
         {`Projeto ${nome}`}
-      </h1>
+      </h2>
       <button className="btn" onClick={ () => openDialog() }>
         Mais sobre o projeto
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" className="icon">
@@ -94,13 +106,13 @@ function ProjectCard(props) {
             <h2>{nome}</h2>
             <p>{dialogMsg}</p>
             <h4>Habilidades e ferramentas usadas no projeto:</h4>
-            <ul>
+            <ol>
               {skills.map((skill) => {
                 return (
                   <li key={ skill }>{skill.charAt(0).toUpperCase() + skill.slice(1)}</li>
                 );
               })}
-            </ul>
+            </ol>
           </aside>
           <div className="icons">
             <IconButton
@@ -131,7 +143,7 @@ function ProjectCard(props) {
         <img src={ notebook } alt="notebook frame" className="notebook-frame" />
         <div className="screen-container">
           <video
-            ref={ videoRef }
+            ref={ videoRefDesktop }
             className="screen"
             src={ videoDesktop }
             autoPlay={ false }
@@ -156,7 +168,7 @@ function ProjectCard(props) {
       <div className="cellphone">
         <div className="gambi" />
         <video
-          ref={ videoRef }
+          ref={ videoRefMobile }
           className="screen"
           src={ videoMobile }
           autoPlay={ false }
