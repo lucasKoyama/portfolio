@@ -18,7 +18,7 @@ iframe {
 
 .card h2 {
   margin-bottom: 5px;
-  font-size: 1.8em !important;
+  font-size: 1.5em !important;
   font-family: 'Oxanium', cursive;
 }
 
@@ -146,7 +146,7 @@ dialog aside ol {
   }
 
   .card h2 {
-    font-size: 1.5em;
+    font-size: 2em !important;
   }
   
   .cellphone {
