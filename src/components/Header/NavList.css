@@ -2,6 +2,7 @@ nav {
   font-size: 1em;
   font-weight: 400;
   color: white;
+  font-size: 1.2em;
 }
 
 nav ul {
@@ -24,14 +25,14 @@ nav li {
 .skills {
   display: none;
   position: absolute;
-  width: 170px;
+  width: 200px;
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.37);
   padding: 10px;
   transition: all 0.5s;
   filter: blur(10px);
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 
 .skills h4 {
