@@ -92,16 +92,6 @@ function ProjectCard(props) {
           <button onClick={ () => document.getElementById(dialogID).close() }>
             <i className="fa-solid fa-xmark" />
           </button>
-          <video
-            src={ videoDesktop }
-            autoPlay
-            muted
-            loop
-            controls
-          >
-            <source src={ videoDesktop } type="video/mp4" />
-            Desculpe, seu navegador não suporta a reprodução de vídeos.
-          </video>
           <aside>
             <h2>{nome}</h2>
             <p>{dialogMsg}</p>
